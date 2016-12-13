@@ -7,20 +7,13 @@
 #include <sys/types.h>
 #include <sys/ioctl.h>
 #include <sys/mount.h>
-#include <sys/disk.h>
-
-//http://forums.justlinux.com/showthread.php?144127-u64-undeclared-error
-//typedef unsigned long u64;  //Gleb
-
+#include <sys/disk.h> //Mac specific 
 
 #include "imgtool/standalone.h"
 #include "imperial_mmc/avr32_sha1.h"
 #include "imperial_mmc/avr32_sfwfs.h"
 
 #define BLK_SIZE 512
-
-// https://sourceforge.net/p/aoetools/mailman/message/1539650/
-//#define BLKGETSIZE64 _IOR(0x12,114,sizeof(u64))  //Gleb 
 
 // The FD to our filesystem image / device
 int gFD = -1;
@@ -565,12 +558,12 @@ int sfwfs_int_getsize ( U32* pSize )
   }
 
   // Attempt to do size request as if image is a block device
-  //xRet = ioctl ( gFD, BLKGETSIZE64, &xImageSz );
-  xRet = ioctl(gFD, DKIOCGETBLOCKCOUNT, &pSize);
+  //xRet = ioctl ( gFD, BLKGETSIZE64, &xImageSz );       //Linux
+  xRet = ioctl(gFD, DKIOCGETBLOCKCOUNT, &pSize);  //Mac: 
   if ( !xRet )
   {
     // Success
-    //*pSize = xImageSz / BLK_SIZE;
+    //*pSize = xImageSz / BLK_SIZE;  // Linux: no need to divide here
     return 0;
   }
 
