@@ -13,7 +13,7 @@ List of changes and instructions:
 
 3) cd bin
 
-```
+
 3) Insert and unmount the SD card first 
  ```c++
 diskutil list (to find e.g. dev/disk2 for the SD card) 
