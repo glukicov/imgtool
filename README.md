@@ -7,6 +7,11 @@ List of changes and structions to run:
 
 1) Changes imgetool.c in imgtool/src/common
 
+```javascript
+var s = "JavaScript syntax highlighting";
+alert(s);
+```
+
 [line 10] ADD
  #include <sys/disk.h> //Mac specific
 
