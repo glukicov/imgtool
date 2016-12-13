@@ -7,14 +7,11 @@ List of changes and structions to run:
 
 1) Changes imgetool.c in imgtool/src/common
 
-```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
-```
 
 [line 10] ADD
+```c++
  #include <sys/disk.h> //Mac specific
-
+```
 [line 561-562] COMMENT OUT and ADD
  //xRet = ioctl ( gFD, BLKGETSIZE64, &xImageSz );       //Linux
   xRet = ioctl(gFD, DKIOCGETBLOCKCOUNT, &pSize);  //Mac: 
