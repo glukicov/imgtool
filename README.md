@@ -38,17 +38,17 @@ sudo ./imgtool /dev/disk2 add GoldenImage.bin GoldenImage.bin
 A) Changes to imgetool.c in imgtool/src/common
 
 
-[line 10] ADD
+[line 10] 
 ```c++
  #include <sys/disk.h> //Mac specific
 ```
-[line 561-562] COMMENT OUT and ADD
+[line 561-562] 
  ```c++
  //xRet = ioctl ( gFD, BLKGETSIZE64, &xImageSz );       //Linux
   xRet = ioctl(gFD, DKIOCGETBLOCKCOUNT, &pSize);  //Mac: 
 ```
 
-[line 566] COMMENT OUT
+[line 566]
  ```c++
  //*pSize = xImageSz / BLK_SIZE;  // Linux: no need to divide here
 ```
