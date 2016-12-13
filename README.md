@@ -15,7 +15,7 @@ List of changes and instructions:
 
 ```
 3) Insert and unmount the SD card first 
-```c++
+ ```c++
 diskutil list (to find e.g. dev/disk2 for the SD card) 
 ```
  ```c++
