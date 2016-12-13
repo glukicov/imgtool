@@ -1,11 +1,11 @@
 # imgtool
 imgtool for Mac
 
-List of changes and structions to run:
+List of changes and instructions:
 
 0) git clone git@github.com:glukicov/imgtool.git
 
-1) Changes imgetool.c in imgtool/src/common
+1) Changes to imgetool.c in imgtool/src/common
 
 
 [line 10] ADD
@@ -13,24 +13,37 @@ List of changes and structions to run:
  #include <sys/disk.h> //Mac specific
 ```
 [line 561-562] COMMENT OUT and ADD
+ ```c++
  //xRet = ioctl ( gFD, BLKGETSIZE64, &xImageSz );       //Linux
   xRet = ioctl(gFD, DKIOCGETBLOCKCOUNT, &pSize);  //Mac: 
+```
 
 [line 566] COMMENT OUT
+ ```c++
  //*pSize = xImageSz / BLK_SIZE;  // Linux: no need to divide here
+```
 
 2) Changes to Makefile (to use gcc instead of clang)  gcc-> gcc.49; make sure you have gcc-4.9 installed with 
 brew install gcc49
-
+ ```c++
 CC=gcc-4.9
-
+```
 3) Insert and unmount the SD card first 
+```c++
 diskutil list (to find e.g. dev/disk2 for the SD card) 
-
+```
+ ```c++
 diskutil unmountDisk /dev/disk2
+```
+4) 
+ ```c++
 
-4) sudo ./imgtool /dev/disk2 format GoldenImage.bin
+sudo ./imgtool /dev/disk2 format GoldenImage.bin
+```
 
-5) sudo ./imgtool /dev/disk2 add GoldenImage.bin GoldenImage.bin
+5) 
+ ```c++
+sudo ./imgtool /dev/disk2 add GoldenImage.bin GoldenImage.bin
+```
 
 Done. 
