@@ -7,7 +7,7 @@ List of changes and instructions:
 
 0) git clone git@github.com:glukicov/imgtool.git
 
-1) make cleaen
+1) make clean
 
 2) make Board=FC7_0
 
