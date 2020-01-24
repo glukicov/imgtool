@@ -3,31 +3,35 @@ imgtool for Mac
 
 List of changes and instructions:
 
--- ---INSTRUCTIONS OF USE ------
+```
+git clone git@github.com:glukicov/imgtool.git
+ ```
+```
+make clean
+```
 
-0) git clone git@github.com:glukicov/imgtool.git
+```
+make Board=FC7_0
+```
 
-1) make clean
+```
+cd bin
+```
 
-2) make Board=FC7_0
-
-3) cd bin
-
-
-3) Insert and unmount the SD card first 
+Insert and unmount the SD card first 
  ```c++
 diskutil list (to find e.g. dev/disk2 for the SD card) 
 ```
  ```c++
 diskutil unmountDisk /dev/disk2
 ```
-4) 
+ 
  ```c++
 
 sudo ./imgtool /dev/disk2 format GoldenImage.bin
 ```
 
-5) 
+ 
  ```c++
 sudo ./imgtool /dev/disk2 add GoldenImage.bin GoldenImage.bin
 ```
