@@ -1,6 +1,8 @@
 # imgtool
 imgtool for Mac
 
+Loads firmware (GoldenImage.bin) to an SD card to be installed on one of the logic boards.
+
 List of changes and instructions:
 
 ```
