@@ -3,7 +3,7 @@ imgtool for Mac
 
 Loads firmware (GoldenImage.bin) to an SD card to be installed on one of the logic boards.
 
-List of changes and instructions:
+### Instructions:
 
 ```
 git clone git@github.com:glukicov/imgtool.git
@@ -39,7 +39,7 @@ sudo ./imgtool /dev/disk2 add GoldenImage.bin GoldenImage.bin
 ```
 
 
-------------- LIST OF CHANGES MADE -------------
+### LIST OF CHANGES MADE
 
 A) Changes to imgetool.c in imgtool/src/common
 
