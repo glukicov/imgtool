@@ -39,7 +39,7 @@ sudo ./imgtool /dev/disk2 add GoldenImage.bin GoldenImage.bin
 ```
 
 
-### LIST OF CHANGES MADE
+### List of changes to the original code 
 
 A) Changes to imgetool.c in imgtool/src/common
 
